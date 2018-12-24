@@ -9,8 +9,3 @@ git push -f REPO_LINK master
 for force push/override everything
 
 
-reeeesasdf asdfq reasdfsdf
-fdsf
-arte
- fas d
-df
