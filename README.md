@@ -7,3 +7,5 @@ esc+:wq+enter
 
 git push -f REPO_LINK master
 for force push/override everything
+
+
