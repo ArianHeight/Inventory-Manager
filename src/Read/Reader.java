@@ -9,6 +9,9 @@ package Read;
 
 public class Reader 
 {
-	
+
+    public Reader() {
+        // TODO constructor
+    }
 
 }
