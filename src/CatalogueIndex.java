@@ -4,7 +4,6 @@
  * 
  * */
 
-
 public class CatalogueIndex 
 {
 	private String m_strName;

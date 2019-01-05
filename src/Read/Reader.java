@@ -3,14 +3,14 @@
  * Controls all mechanics used for file reading
  * - Lexing
  * - Parsing
- * 
+ *
  * */
+
 package Read;
 
 public class Reader {
 
-    public Reader() {
-        // TODO constructor
-    }
-
+	public Reader() {
+		// TODO constructor
+	}
 }
