@@ -1,11 +1,2 @@
 # Inventory-Manager
-An inventory manager for large warehouses or stores.
-
-git revert PUSH_CODE
-
-esc+:wq+enter
-
-git push -f REPO_LINK master
-for force push/override everything
-
-
+An inventory manager for large warehouses or stores. A joint project between UBC and Waterloo Compsci first-years just for fun.
