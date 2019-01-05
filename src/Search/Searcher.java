@@ -8,6 +8,8 @@
 package Search;
 
 public class Searcher {
-	
-	
+
+    public Searcher() {
+        // TODO constructor
+    }
 }

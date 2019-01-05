@@ -7,8 +7,9 @@
 
 package Sort;
 
-public class Sorter 
-{
-	
-	
+public class Sorter {
+
+    public Sorter() {
+        // TODO constructor
+    }
 }

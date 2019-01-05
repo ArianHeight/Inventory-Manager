@@ -7,12 +7,10 @@
 
 public class CatalogueIndex 
 {
-	//vars
 	private String m_strName;
 	
 	public CatalogueIndex(String name)
 	{
-		//cstr
 		this.m_strName = name;
 	}
 }

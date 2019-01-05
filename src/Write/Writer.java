@@ -9,8 +9,9 @@
 
 package Write;
 
-public class Writer 
-{
-	
+public class Writer {
 
+    public Writer() {
+        // TODO constructor
+    }
 }
