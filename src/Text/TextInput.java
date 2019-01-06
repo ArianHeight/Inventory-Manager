@@ -71,4 +71,9 @@ public class TextInput {
 	}
 	
 	//maybe a get currency in ze future?
+
+	public void Dstr()
+	{
+		scanner.close(); //dstr clean up
+	}
 }

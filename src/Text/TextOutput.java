@@ -19,5 +19,9 @@ public class TextOutput
 		int cutIndex = returnValue.length() - 2; //name
 		return "$" + returnValue.substring(0, cutIndex) + "." + returnValue.substring(cutIndex); //splices in a period at cut index
 	}
-	
+
+	public void Dstr()
+	{
+		//dstr
+	}
 }
