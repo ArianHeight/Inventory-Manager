@@ -1,0 +1,8 @@
+## Git will ignore all files with the .xml or .class files ##
+
+*.xml
+*.class
+
+## Feel free to add a specific file if you need to, ex: ##
+
+Inventory-Manager.iml
