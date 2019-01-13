@@ -16,7 +16,8 @@ import java.util.ArrayList;
 public class Reader
 {
     private Scanner reader = new Scanner(System.in); //temporary
-    private String eofMSG = "Lexer has reached end of file...";
+    private String eofMSG = "Lexer has reached end of file..."; //end of file error msg
+    private String datDelimiter = "/|[\\r\\n]"; //standard delimiter for our .dat files
 
 	public Reader()
 	{
@@ -42,8 +43,9 @@ public class Reader
     }
 
     //reads a certain number of tokens and outputs them into the output list
-    public boolean readToken(int numOfTokens, ArrayList<String> output)
+    public boolean readToken(String delimiter, int numOfTokens, ArrayList<String> output)
     {
+        reader.useDelimiter(delimiter);
         String inputHolder = ""; //temporary place to hold input
 
         try
@@ -65,15 +67,23 @@ public class Reader
         catch (EOFException e) //error handling
         {
             System.out.println(e);
+            reader.reset(); //resets reader for next reading
             return false;
         }
 
+        reader.reset(); //resets reader for next reading
         return true; //reach end without trouble
     }
 
-    //reads all tokens until a closing operand or eof is reached, and outputs them to a list
-    public void readTokenUntil(String closingOperand, ArrayList<String> output)
+    public boolean readToken(int numOfTokens, ArrayList<String> output) //wrapper method
     {
+        return readToken(datDelimiter, numOfTokens, output);
+    }
+
+    //reads all tokens until a closing operand or eof is reached, and outputs them to a list
+    public void readTokenUntil(String delimiter, String closingOperand, ArrayList<String> output)
+    {
+        reader.useDelimiter(delimiter); //sets delimiter for reading
         String inputHolder = "";  //temporary place to hold data
 
         try
@@ -98,7 +108,20 @@ public class Reader
         catch (EOFException e) //error handling
         {
             System.out.println(e);
+            reader.reset(); //resets the delimiter
         }
+
+        reader.reset(); //resets the delimiter
+    }
+
+    public void readTokenUntil(String closingOperand, ArrayList<String> output) //wrapper method
+    {
+        readTokenUntil(datDelimiter, closingOperand, output);
+    }
+
+    public String getDatDelimiter()
+    {
+        return datDelimiter;
     }
 
 	public void Dstr()
