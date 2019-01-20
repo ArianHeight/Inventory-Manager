@@ -25,19 +25,23 @@ public class TextOutput
 	//outputs every instance in the arraylist
 	public <T> void formatArray(ArrayList<T> in)
 	{
+		String output = "";
 		for (T instance : in)
 		{
-			System.out.println(instance);
+			output += instance + ", ";
 		}
+		System.out.println(output.substring(0, output.length() - 2));
 	}
 
 	//outputs every instance in the arraylist
 	public <T> void formatArray(List<T> in)
 	{
+		String output = "";
 		for (T instance : in)
 		{
-			System.out.println(instance);
+			output += instance + ", ";
 		}
+		System.out.println(output.substring(0, output.length() - 2));
 	}
 
 	public void Dstr()

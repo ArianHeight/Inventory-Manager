@@ -29,19 +29,19 @@ public class Searcher {
 	public String binSearch(int index, ArrayList<String> data)
 	{
 		// dataset
-		int low = 0;
-		int high = data.size() - 1;
-		int mid;
+			int low = 0;
+			int high = data.size() - 1;
+			int mid;
 
-		while (low <= high){
+			while (low <= high){
 
-			mid = (low + high) / 2;
-			if (mid > index){
-				high = mid - 1;
-			}
-			else if (mid < index){
-				low = mid + 1;
-			}
+				mid = (low + high) / 2;
+				if (mid > index){
+					high = mid - 1;
+				}
+				else if (mid < index){
+					low = mid + 1;
+				}
 			else {
                 return data.get(mid);
             }
