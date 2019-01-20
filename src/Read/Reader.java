@@ -17,13 +17,15 @@ public class Reader
 {
     private boolean attachedToFile = false; //whether it is attached to a readable file or not
     private Scanner reader = new Scanner(System.in); //temporary
-    private String eofMSG = "Lexer has reached end of file..."; //end of file error msg
-    private String datDelimiter = "/|[\\r\\n]"; //standard delimiter for our .dat files
+    private String eofMSG = ""; //end of file error msg
+    private String datDelimiter = ""; //standard delimiter for our .dat files
 
 	public Reader()
 	{
 		//cstr
-	}
+        eofMSG = "Lexer has reached end of file..."; //end of file error msg
+        datDelimiter = "/|[\\r\\n]"; //standard delimiter for our .dat files
+    }
 
 	public boolean setFileToRead(String filePath) //takes relative path and sets scanner input to it
     {
