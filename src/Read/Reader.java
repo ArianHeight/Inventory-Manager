@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class Reader
 {
+    private boolean attachedToFile = false; //whether it is attached to a readable file or not
     private Scanner reader = new Scanner(System.in); //temporary
     private String eofMSG = "Lexer has reached end of file..."; //end of file error msg
     private String datDelimiter = "/|[\\r\\n]"; //standard delimiter for our .dat files
@@ -36,15 +37,22 @@ public class Reader
         {
             //TODO catch expection here
             System.out.println("FAILED");
+            attachedToFile = false;
             return false; //unsuccessful return false
         }
 
+        attachedToFile = true;
         return true; //input change was successful, return true
     }
 
     //reads a certain number of tokens and outputs them into the output list
     public boolean readToken(String delimiter, int numOfTokens, ArrayList<String> output)
     {
+        if (!attachedToFile) //guard
+        {
+            return false; //early return if no file attached
+        }
+
         reader.useDelimiter(delimiter);
         String inputHolder = ""; //temporary place to hold input
 
@@ -68,6 +76,7 @@ public class Reader
         {
             System.out.println(e);
             reader.reset(); //resets reader for next reading
+            attachedToFile = false; //no longer attached to file
             return false;
         }
 
@@ -83,6 +92,11 @@ public class Reader
     //reads all tokens until a closing operand or eof is reached, and outputs them to a list
     public void readTokenUntil(String delimiter, String closingOperand, ArrayList<String> output)
     {
+        if (!attachedToFile) //guard
+        {
+            return; //early return if no file attached
+        }
+
         reader.useDelimiter(delimiter); //sets delimiter for reading
         String inputHolder = "";  //temporary place to hold data
 
@@ -109,6 +123,7 @@ public class Reader
         {
             System.out.println(e);
             reader.reset(); //resets the delimiter
+            attachedToFile = false;
         }
 
         reader.reset(); //resets the delimiter
