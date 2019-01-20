@@ -30,7 +30,7 @@ public class TextOutput
 		{
 			output += instance + ", ";
 		}
-		System.out.println(output.substring(0, output.length() - 2));
+		System.out.println("[" + output.substring(0, output.length() - 2) + "]");
 	}
 
 	//outputs every instance in the arraylist
@@ -41,7 +41,7 @@ public class TextOutput
 		{
 			output += instance + ", ";
 		}
-		System.out.println(output.substring(0, output.length() - 2));
+		System.out.println("[" + output.substring(0, output.length() - 2) + "]");
 	}
 
 	public void Dstr()
