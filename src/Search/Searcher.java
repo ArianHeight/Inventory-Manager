@@ -26,14 +26,12 @@ public class Searcher {
 	}
 
 	// Binary searches an ArrayList to find the dataset at an index
-	public int binSearch(int index, ArrayList data)
+	public String binSearch(int index, ArrayList<String> data)
 	{
 		// dataset
 		int low = 0;
 		int high = data.size() - 1;
 		int mid;
-
-		data.get(0);
 
 		while (low <= high){
 
@@ -44,10 +42,11 @@ public class Searcher {
 			else if (mid < index){
 				low = mid + 1;
 			}
-			else
-				return mid;
+			else {
+                return data.get(mid);
+            }
 		}
 
-		return -1;
+		return "Out of Bounds.";
 	}
 }
