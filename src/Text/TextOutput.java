@@ -8,6 +8,8 @@
 
 package Text;
 import java.lang.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TextOutput 
 {
@@ -18,6 +20,24 @@ public class TextOutput
 		String returnValue = String.valueOf(cents); //translates the cent value into a formattable string
 		int cutIndex = returnValue.length() - 2; //name
 		return "$" + returnValue.substring(0, cutIndex) + "." + returnValue.substring(cutIndex); //splices in a period at cut index
+	}
+
+	//outputs every instance in the arraylist
+	public <T> void formatArray(ArrayList<T> in)
+	{
+		for (T instance : in)
+		{
+			System.out.println(instance);
+		}
+	}
+
+	//outputs every instance in the arraylist
+	public <T> void formatArray(List<T> in)
+	{
+		for (T instance : in)
+		{
+			System.out.println(instance);
+		}
 	}
 
 	public void Dstr()
