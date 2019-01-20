@@ -25,6 +25,7 @@ public class Searcher {
 		return 0;
 	}
 
+	// Binary searches an ArrayList to find the dataset at an index
 	public int binSearch(int index, ArrayList data)
 	{
 		// dataset
