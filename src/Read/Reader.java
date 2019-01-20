@@ -27,7 +27,8 @@ public class Reader
         datDelimiter = "/|[\\r\\n]"; //standard delimiter for our .dat files
     }
 
-	public boolean setFileToRead(String filePath) //takes relative path and sets scanner input to it
+    //takes relative path and sets scanner input to it **required to be run before any other methods in this class!
+	public boolean setFileToRead(String filePath)
     {
         try
         {
